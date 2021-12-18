@@ -33,7 +33,7 @@ class ProtocolService(BaseService):
                             'type': 'string',
                             'examples': ['fred@example.com']
                         },
-                        'token': {
+                        'api_token': {
                             'description': 'API token value to create your JIRA Ticket',
                             'minLength': 4,
                             'title': 'API Token',
@@ -51,7 +51,7 @@ class ProtocolService(BaseService):
                     'required': [
                         'url',
                         'email',
-                        'token',
+                        'api_token',
                         'key'
                     ],
                     'type': 'object'
