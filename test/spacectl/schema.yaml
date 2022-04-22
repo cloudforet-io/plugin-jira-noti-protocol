@@ -1,0 +1,28 @@
+---
+labels: []
+name: atlassian_jira
+schema:
+  properties:
+    url:
+      minLength: 9.0
+      title: Atlassian JIRA site URL
+      type: string
+    email:
+      minLength: 4.0
+      title: Email address of API Token User
+      type: string
+    api_token:
+      minLength: 8.0
+      title: API Token
+      type: string
+    key:
+      minLength: 2
+      title: JIRA Project KEY
+      type: string
+  required:
+  - url
+  - email
+  - api_token
+  - key
+service_type: secret.credentials
+tags: {}

@@ -1,0 +1,42 @@
+---
+capability:
+  supported_schema:
+  - atlassian_jira
+metadata:
+  view:
+    layouts:
+      help:service_account:create:
+        name: Creation Help
+        options:
+          markdown:
+            en: '# Help for Atlasian API key
+
+
+              ## Create API Token
+
+              Create API Token at
+
+              https://id.atlassian.com/manage-profile/security/api-tokens
+
+              ## Email
+              
+              Email is your login email address for atlassian
+
+              ## URL
+              
+              URL is Jira project site like https://<my-jira>.atlassian.net
+
+              ## Key
+
+              Key is your Jira project key which can be found at https://<my-jira>.atlassian.net/jira/projects
+
+              '
+        type: markdown
+name: Atlassian
+provider: atlassian
+tags:
+  color: '#004F99'
+  icon: https://spaceone-custom-assets.s3.ap-northeast-2.amazonaws.com/console-assets/icons/atlassian.png
+template:
+  service_account:
+    schema: {}
