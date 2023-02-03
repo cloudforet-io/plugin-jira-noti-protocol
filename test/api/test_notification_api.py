@@ -19,7 +19,9 @@ if API_TOKEN == None or EMAIL == None or URL == None or KEY == None:
 ##################################################
 # ERROR
 #
-# Configure your Slack Token first for test
+# Configure your JIRA Token first for test
+# How to create API KEY:
+# - https://github.com/cloudforet-io/plugin-jira-noti-protocol/tree/master/docs/admin-guide
 ##################################################
 example)
 

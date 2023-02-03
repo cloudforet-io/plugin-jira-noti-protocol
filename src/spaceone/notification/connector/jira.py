@@ -23,7 +23,7 @@ class JiraConnector(BaseConnector):
             _LOGGER.error(f'url: {url}, email: {email}, api_token:{api_token}')
             return False
         auth = HTTPBasicAuth(email, api_token)
-        headers = {'Accept': 'application/json', 'Content-Type':'application/json'}
+        headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
 
         jira_url = f'{url}/rest/api/3/issue'
 
@@ -32,9 +32,9 @@ class JiraConnector(BaseConnector):
         response = requests.request(
             "POST",
             jira_url,
-            data = json.dumps(message),
-            headers = headers,
-            auth = auth)
+            data=json.dumps(message),
+            headers=headers,
+            auth=auth)
 
         _LOGGER.debug(f'[JiraConnector] {response}')
         return response

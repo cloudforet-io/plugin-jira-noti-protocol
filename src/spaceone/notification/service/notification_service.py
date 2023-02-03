@@ -27,6 +27,7 @@ class NotificationService(BaseService):
                 - secret_data
                 - channel_data
         """
+        options = params.get('options', {})
         channel_data = params.get('channel_data', {})
         notification_type = params['notification_type']
         message = params['message']
@@ -36,12 +37,12 @@ class NotificationService(BaseService):
         key = channel_data.get('key')
 
         noti_mgr: NotificationManager = self.locator.get_manager('NotificationManager')
-        message_payload = self._make_jira_issue_ticket(message, notification_type, key)
+        message_payload = self._make_jira_issue_ticket(message, notification_type, key, options)
 
         noti_mgr.dispatch(channel_data, message_payload, **kwargs)
 
 
-    def _make_jira_issue_ticket(self, message, notification_type, key):
+    def _make_jira_issue_ticket(self, message, notification_type, key, options):
         '''
         message (dict): {
             'title': 'str',
@@ -68,8 +69,11 @@ class NotificationService(BaseService):
         }
 
         JIRA format: https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-post
-        '''
 
+        options:
+            'issuetype': 'MY CUSTOM TYPE'
+        '''
+        issuetype = options.get('issuetype', 'Task')
         project_key = key
         title = message.get("title", "No Title")
 
@@ -77,7 +81,7 @@ class NotificationService(BaseService):
         payload = {
             "update": {},
             "fields": {
-                "issuetype":    {"name": "Task"},
+                "issuetype":    {"name": issuetype},
                 "project":      {"key" : project_key},
                 "summary":      title,
                 "description":  description
