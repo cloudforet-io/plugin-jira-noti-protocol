@@ -36,7 +36,7 @@ name: Atlassian
 provider: atlassian
 tags:
   color: '#004F99'
-  icon: https://spaceone-custom-assets.s3.ap-northeast-2.amazonaws.com/console-assets/icons/atlassian.png
+  icon: https://spaceone-custom-assets.s3.ap-northeast-2.amazonaws.com/console-assets/icons/atlassian.svg
 template:
   service_account:
     schema: {}
