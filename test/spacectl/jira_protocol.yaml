@@ -3,3 +3,5 @@ name: JIRA
 plugin_info:
   plugin_id: plugin-jira-noti-protocol
   schema: atlassian_jira
+#  options:
+#    issuetype: MY CUSTOM TYPE
