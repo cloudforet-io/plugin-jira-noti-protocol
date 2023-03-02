@@ -27,7 +27,7 @@ class JiraConnector(BaseConnector):
 
         jira_url = f'{url}/rest/api/3/issue'
 
-        print(message)
+        _LOGGER.debug(f'[JiraConnector] {jira_url}')
 
         response = requests.request(
             "POST",
